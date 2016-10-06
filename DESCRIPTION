@@ -19,7 +19,8 @@ Imports:
     mvtnorm,
     flare,
     picasso,
-    Rcpp
+    Rcpp,
+    RcppArmadillo
 Suggests:
     knitr,
     testthat
