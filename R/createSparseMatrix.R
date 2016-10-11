@@ -59,10 +59,10 @@ createSparseMatrix <- function(N, sparsity, method = "normal", stationary = FALS
   }
 
   if (stationary == TRUE) {
-    # if spectral radius < 1 is needed, return the re-normalized matrix
+    # if spectral radius < 1 is needed, return the re-normalized matrix  
     K <- 1 + base::abs(mu)
     return(1/(K * base::sqrt(p * sparsity * N)) * A)
-    # return(1/(max(Mod(eigen(A)$values)) + 0.01) * A)
+    #return(1/(max(Mod(eigen(A)$values)) + 0.01) * A)
   } else {
     return(A)
 
