@@ -1,6 +1,6 @@
 #' @useDynLib sparsevar
 #' @importFrom Rcpp sourceCpp
-#' 
+#'
 #' @title Multivariate VAR estimation
 #'
 #' @description A function to estimate a (possibly high-dimensional) multivariate VAR time series
@@ -38,9 +38,7 @@
 #'
 #' @export
 fitVAR <- function(data, p = 1, penalty = "ENET", method = "cv", ...) {
-
   opt <- list(...)
-
   if (method == "cv") {
     # use CV to find lambda
     opt$method <- "cv"
@@ -53,9 +51,7 @@ fitVAR <- function(data, p = 1, penalty = "ENET", method = "cv", ...) {
     # error: unknown method
     stop("Unknown method. Possible values are \"cv\" or \"timeSlice\"")
   }
-
   return(out)
-
 }
 
 cvVAR <- function(data, p, penalty = "ENET", opt = NULL) {
