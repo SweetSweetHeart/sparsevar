@@ -335,10 +335,16 @@ informCrit <- function(v) {
       sigma <- v[[i]]$sigma
       nr <- nrow(v[[i]]$residuals)
       nc <- ncol(v[[i]]$residuals)
+<<<<<<< 41c97029a4d7bbdc8a2c8396ba5b515574b91bec
       # S <- (nr / (nr - nc * p - 1)) * sigma
       # d <- det(S)
       d <- det(sigma)
       r[i,1] <- log(d) + (2*p*nc^2)/nr                 # AIC
+=======
+      S <- (nr / (nr - nc * p - 1)) * sigma
+      d <- det(S)
+      r[i,1] <- nr*nc*log(2*pi) + nr*log(det(sigma)) + (2*p*nc^2) + nc*(nc+1) # AIC
+>>>>>>> Fixed AIC in informCrit.R
       r[i,2] <- log(d) + (p*nc^2)/nr * log(nr)         # Schwarz
       r[i,3] <- log(d) + (2*p*nc^2)/nr * log(log(nr))  # Hannan-Quinn
       # r[i,1] <- nr*nc*log(2*pi) + nr*log(det(sigma)) + (2*p*nc^2) + nc*(nc+1) # AIC
